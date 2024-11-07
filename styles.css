@@ -12,17 +12,19 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
+  justify-content: space-between; /* Elements evenly spaced */
 }
 
 .nav-links {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
+  gap: 10px; /* Gap zwischen den Links für besseren Abstand */
 }
 
 .nav-links li {
   list-style: none;
-  margin: 0 20px;
+  margin: 0;
   display: flex;
   align-items: center;
 }
@@ -41,7 +43,7 @@ body {
 .logo {
   display: flex;
   justify-content: left;
-  flex-grow: 2;
+  flex-grow: 1;
 }
 
 .user-cart {
@@ -64,14 +66,15 @@ body {
   display: flex;
   padding: 20px;
   flex: 1;
-  height: 800px;
+  height: auto; /* Die Höhe des Produktbereichs passt sich an den Inhalt an */
+  flex-wrap: wrap; /* Damit das Layout auf kleineren Bildschirmen korrekt umbricht */
 }
 
 .image-slider {
   flex: 2;
   position: relative;
   overflow: hidden;
-  height: 100%;
+  height: 400px; /* Slider-Höhe für bessere Anpassung auf kleinen Bildschirmen */
 }
 
 .slider {
@@ -115,9 +118,9 @@ body {
 
 .product-details {
   flex: 1;
-  padding: 30px;
+  padding: 20px;
   text-align: left;
-  height: 100%;
+  height: auto; /* Flex-Grow, damit der Container den Rest des Platzes ausfüllt */
 }
 
 .product-details h1 {
@@ -131,13 +134,14 @@ body {
   margin: 20px 0;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap; /* Größenboxen auf kleineren Bildschirmen umbrechen */
 }
 
 .size-box {
   display: inline-block;
   padding: 10px;
   border: 1px solid #ccc;
-  margin: 0 5px;
+  margin: 5px;
   cursor: pointer;
   transition: font-weight 0.3s, background-color 0.3s;
 }
@@ -278,15 +282,19 @@ footer {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Navbar Elemente untereinander anordnen */
+    flex-direction: column;
     font-size: 16px;
+    padding: 15px;
+    align-items: center;
   }
 
   .nav-links {
-    flex-direction: column; /* Navigation links untereinander anzeigen */
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-left: 0;
+    gap: 15px;
   }
 
   .nav-links li {
@@ -313,7 +321,18 @@ footer {
 
   .image-slider {
     flex: 1;
-    height: 300px; /* Slider Höhe auf 300px setzen */
+    height: 250px; /* Reduziere die Höhe des Sliders */
+  }
+
+  .slider {
+    display: flex;
+  }
+
+  .slide {
+    display: block; /* Alle Bilder sollen sichtbar sein, um sicherzustellen, dass sie umschalten */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .product-details {
@@ -326,17 +345,17 @@ footer {
   }
 
   .sizes {
-    flex-wrap: wrap; /* Größen in mehreren Reihen anordnen */
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .size-box {
     padding: 8px;
-    font-size: 14px; /* Kleinere Schriftgröße für mobile Ansicht */
+    font-size: 14px;
   }
 
   button {
-    width: 100%; /* Button nimmt die ganze Breite ein */
+    width: 100%;
     padding: 15px;
     font-size: 18px;
   }
@@ -361,7 +380,7 @@ footer {
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 15px;
+    padding: 10px;
   }
 
   .nav-links {
