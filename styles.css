@@ -13,14 +13,15 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  flex-wrap: wrap; /* Verhindert, dass die Navbar zu breit wird */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Links und Rechts trennen */
 }
 
 .nav-links {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
-  flex-wrap: wrap; /* Ermöglicht das Umfließen der Links bei kleinen Geräten */
+  flex-wrap: wrap;
 }
 
 .nav-links li {
@@ -50,7 +51,9 @@ body {
 .user-cart {
   display: flex;
   align-items: center;
+  justify-content: center; /* Zentrierte Ausrichtung */
   margin-left: auto;
+  flex-grow: 0; /* Verhindert, dass es den verfügbaren Platz dehnt */
 }
 
 .user-cart .login-link {
@@ -69,7 +72,7 @@ body {
   padding: 20px;
   flex: 1;
   height: 800px;
-  flex-wrap: wrap; /* Ermöglicht flexibles Layout für den Produktbereich */
+  flex-wrap: wrap;
 }
 
 .image-slider {
@@ -89,7 +92,7 @@ body {
   display: none;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Bild bleibt im Container ohne Verzerrung */
+  object-fit: contain; /* Stellt sicher, dass das Bild im Container bleibt */
 }
 
 .slide.active {
@@ -310,7 +313,7 @@ footer {
 
   .image-slider {
     flex: 1;
-    height: 300px; /* Sliderhöhe auf Tablets verringern */
+    height: 300px;
   }
 
   footer {
@@ -361,7 +364,7 @@ footer {
 
   .image-slider {
     flex: 1;
-    height: 250px; /* Sliderhöhe auf Handys verringern */
+    height: 250px;
   }
 
   footer {
