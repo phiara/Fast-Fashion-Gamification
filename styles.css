@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  justify-content: space-between; /* Verhindert, dass alles zu eng wird */
+  justify-content: space-between;
 }
 
 .nav-links {
@@ -280,95 +280,76 @@ footer {
 /* Mobile und Tablet */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    font-size: 16px; /* Kleinere Schriftgröße für den Header */
     padding: 10px;
-    font-size: 18px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-    width: 100%; /* Verhindert, dass das Menü zu schmal wird */
   }
 
   .nav-links li {
-    margin: 10px 0;
-    width: 100%; /* Menüeinträge breiten sich aus */
+    margin: 0 10px; /* Weniger Abstand zwischen den Links */
   }
 
-  .logo {
-    justify-content: center;
-    flex-grow: 0;
-  }
-
-  .product-container {
-    flex-direction: column;
+  .logo img {
+    width: 150px; /* Kleinere Logo-Größe */
     height: auto;
   }
 
-  .image-slider {
-    flex: 1;
-    height: 300px;
-  }
-
-  .product-details {
-    flex: 1;
-    padding: 15px;
+  .user-cart .login-link {
+    font-size: 14px; /* Kleinere Schriftgröße für Login-Link */
   }
 
   button {
     width: 100%;
-    padding: 15px;
-    font-size: 18px;
+    font-size: 16px; /* Kleinere Schriftgröße für Buttons */
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
+  footer {
+    font-size: 12px; /* Kleinere Schriftgröße für Footer */
   }
 
-  .footer-logo {
-    margin-top: 10px;
+  .footer-logo h3 {
+    font-size: 16px; /* Kleinere Schriftgröße für Footer-Logo */
   }
 
-  .social {
-    justify-content: flex-start;
-    margin-top: 10px;
+  .footer-logo p {
+    font-size: 12px; /* Kleinere Schriftgröße für Footer-Text */
+  }
+
+  .social i {
+    font-size: 18px; /* Kleinere Social-Media-Icons */
   }
 }
 
 /* Kleinere mobile Geräte */
 @media (max-width: 480px) {
   .navbar {
-    padding: 10px;
+    font-size: 14px; /* Noch kleinere Schriftgröße für den Header */
   }
 
-  .nav-links {
-    margin-top: 5px;
+  .logo img {
+    width: 120px; /* Noch kleinere Logo-Größe */
   }
 
-  .image-slider {
-    height: 200px;
+  .user-cart .login-link {
+    font-size: 12px; /* Noch kleinere Schriftgröße für Login-Link */
   }
 
-  .product-details {
-    padding: 10px;
+  button {
+    font-size: 14px; /* Noch kleinere Schriftgröße für Buttons */
   }
 
-  .price {
-    font-size: 24px;
-  }
-
-  .footer-container {
-    gap: 10px;
+  footer {
+    font-size: 10px; /* Noch kleinere Schriftgröße für Footer */
   }
 
   .footer-logo h3 {
-    font-size: 18px;
+    font-size: 14px; /* Noch kleinere Schriftgröße für Footer-Logo */
+  }
+
+  .footer-logo p {
+    font-size: 10px; /* Noch kleinere Schriftgröße für Footer-Text */
   }
 
   .social i {
-    font-size: 18px;
+    font-size: 16px; /* Noch kleinere Social-Media-Icons */
   }
 }
