@@ -1,4 +1,3 @@
-/* Allgemeine Layout-Einstellungen */
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -72,7 +71,7 @@ body {
   flex: 2; /* 2 Teile für den Bilder-Container */
   position: relative;
   overflow: hidden; /* Versteckt überstehende Teile */
-  height: 100%; /* Slider nimmt volle Höhe des Containers ein */
+  height: 100%; /* Maximiert die Höhe des Containers */
 }
 
 .slider {
@@ -85,7 +84,7 @@ body {
   display: none; /* Standardmäßig ausgeblendet */
   width: 100%;
   height: 100%; /* Höhe an den Slider anpassen */
-  object-fit: contain; /* Beibehaltung des Seitenverhältnisses ohne Beschneiden */
+  object-fit: cover; /* Besseres Anpassen der Bilder an den Container */
 }
 
 .slide.active {
@@ -114,12 +113,37 @@ body {
   right: 10px; /* Abstand vom rechten Rand */
 }
 
+/* Für kleinere Bildschirmgrößen */
+@media (max-width: 768px) {
+  .image-slider {
+    height: 50vw; /* Bildgröße proportional zur Breite des Bildschirms */
+  }
+
+  .slide {
+    height: 100%; /* Bild bleibt immer in voller Höhe */
+    object-fit: cover; /* Deckt den gesamten Container ab */
+  }
+}
+
+/* Für sehr kleine Geräte (max. 480px) */
+@media (max-width: 480px) {
+  .image-slider {
+    height: 50vw; /* Bildgröße an die Bildschirmbreite anpassen */
+  }
+
+  .slide {
+    height: 100%; /* Vollbildhöhe */
+    object-fit: cover; /* Optimale Skalierung */
+  }
+}
+
 .product-details {
   flex: 1; /* 1 Teil für den Informations-Container */
   padding: 30px; /* Padding für die Produktdetails */
   text-align: left; /* Links ausgerichtet */
   height: 100%; /* Höhe auf 100% setzen, um den gesamten Raum auszufüllen */
 }
+
 .product-details h1 {
   color: rgb(248, 10, 10);
   font-size: 40px;
@@ -272,85 +296,4 @@ footer {
 .header-divider {
   border-top: 1px solid rgb(210, 200, 200); /* Dünne graue Linie */
   margin: 10px 0; /* Abstand um die Linie */
-}
-
-/* Medienabfragen für kleinere Bildschirmgrößen */
-
-/* Für Geräte mit einer Breite von bis zu 768px */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Menü untereinander statt nebeneinander */
-    font-size: 18px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    justify-content: center; /* Logo zentrieren */
-  }
-
-  .product-container {
-    flex-direction: column; /* Produktbild und -details untereinander */
-    height: auto;
-  }
-
-  .image-slider {
-    flex: 1;
-    margin-bottom: 20px;
-  }
-
-  .product-details {
-    flex: 1;
-    padding: 20px;
-  }
-
-  .product-details h1 {
-    font-size: 30px;
-  }
-
-  .sizes {
-    flex-direction: column; /* Größen untereinander statt nebeneinander */
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-links ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .social {
-    justify-content: center;
-  }
-}
-
-/* Für Geräte mit einer Breite von bis zu 480px */
-@media (max-width: 480px) {
-  .navbar {
-    font-size: 16px; /* Kleinere Schriftgröße */
-  }
-
-  .product-details h1 {
-    font-size: 25px;
-  }
-
-  .product-details h2 {
-    font-size: 30px;
-  }
-
-  button {
-    padding: 12px 40px;
-    font-size: 16px;
-  }
-
-  .price {
-    font-size: 25px;
-  }
 }
