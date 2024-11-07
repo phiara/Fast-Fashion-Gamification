@@ -7,41 +7,41 @@ body {
 }
 
 .navbar {
-  background-color: white; /* Hintergrundfarbe auf Weiß ändern */
+  background-color: white;
   font-size: 20px;
   display: flex;
-  align-items: center; /* Vertikale Ausrichtung */
+  align-items: center;
   padding: 10px 20px;
 }
 
 .nav-links {
   display: flex;
-  justify-content: flex-start; /* Links ausrichten */
-  flex-grow: 1; /* Flex-Grow für den Platz */
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .nav-links li {
   list-style: none;
-  margin: 0 20px; /* Abstand zwischen den Menüpunkten */
-  display: flex; /* Flex-Display für bessere Ausrichtung */
-  align-items: center; /* Vertikale Ausrichtung */
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333; /* Linkfarbe */
-  font-weight: normal; /* Normalgewicht für den Link */
-  line-height: 40px; /* Höhe der Links, um sie vertikal auszurichten */
+  color: #333;
+  font-weight: normal;
+  line-height: 40px;
 }
 
 .nav-links a:hover {
-  font-weight: bold; /* Fett bei Hover */
+  font-weight: bold;
 }
 
 .logo {
   display: flex;
-  justify-content: left; /* Logo zentrieren */
-  flex-grow: 2; /* Flex-grow für zentrierte Positionierung */
+  justify-content: left;
+  flex-grow: 2;
 }
 
 .user-cart {
@@ -51,45 +51,46 @@ body {
 }
 
 .user-cart .login-link {
-  color: #333; /* Anmelden Link in Schwarz */
+  color: #333;
   margin-right: 20px;
-  text-decoration: none; /* Keine Unterstreichung */
+  text-decoration: none;
 }
 
 .user-cart .login-link:hover {
-  font-weight: bold; /* Fett bei Hover */
+  font-weight: bold;
 }
 
 .product-container {
   display: flex;
-  padding: 20px; /* Innenabstand beibehalten */
+  padding: 20px;
   flex: 1;
-  height: 800px; /* Höhe des Produktcontainers erhöhen */
+  height: 800px;
 }
 
 .image-slider {
-  flex: 2; /* 2 Teile für den Bilder-Container */
+  flex: 2;
   position: relative;
-  overflow: hidden; /* Versteckt überstehende Teile */
-  height: 100%; /* Maximiert die Höhe des Containers */
+  overflow: hidden;
+  height: 100%;
 }
 
 .slider {
   display: flex;
   position: relative;
-  height: 100%; /* Slider soll die volle Höhe des Containers einnehmen */
+  height: 100%;
+  width: 100%;
 }
 
 .slide {
-  display: none; /* Standardmäßig ausgeblendet */
+  display: none;
   width: 100%;
-  height: 100%; /* Höhe an den Slider anpassen */
-  object-fit: cover; /* Besseres Anpassen der Bilder an den Container */
+  height: 100%;
+  object-fit: contain;
 }
 
 .slide.active {
-  display: block; /* Zeigt nur das aktive Bild */
-  transition: opacity 0.5s ease; /* Sanfter Übergang für Bildwechsel */
+  display: block;
+  transition: opacity 0.5s ease;
 }
 
 .arrow {
@@ -97,51 +98,47 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  color: white; /* Pfeilfarbe */
+  color: white;
   cursor: pointer;
-  z-index: 10; /* Sicherstellen, dass sie über den Bildern sind */
-  background-color: rgba(190, 185, 185, 0.5); /* Halbdurchsichtiger Hintergrund */
-  padding: 10px; /* Etwas Platz um die Pfeile */
-  border-radius: 5px; /* Abgerundete Ecken für die Pfeile */
+  z-index: 10;
+  background-color: rgba(190, 185, 185, 0.5);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .arrow.left {
-  left: 10px; /* Abstand vom linken Rand */
+  left: 10px;
 }
 
 .arrow.right {
-  right: 10px; /* Abstand vom rechten Rand */
+  right: 10px;
 }
 
-/* Für kleinere Bildschirmgrößen */
 @media (max-width: 768px) {
   .image-slider {
-    height: 50vw; /* Bildgröße proportional zur Breite des Bildschirms */
+    height: 50vw;
   }
 
   .slide {
-    height: 100%; /* Bild bleibt immer in voller Höhe */
-    object-fit: cover; /* Deckt den gesamten Container ab */
+    object-fit: cover;
   }
 }
 
-/* Für sehr kleine Geräte (max. 480px) */
 @media (max-width: 480px) {
   .image-slider {
-    height: 50vw; /* Bildgröße an die Bildschirmbreite anpassen */
+    height: 50vw;
   }
 
   .slide {
-    height: 100%; /* Vollbildhöhe */
-    object-fit: cover; /* Optimale Skalierung */
+    object-fit: cover;
   }
 }
 
 .product-details {
-  flex: 1; /* 1 Teil für den Informations-Container */
-  padding: 30px; /* Padding für die Produktdetails */
-  text-align: left; /* Links ausgerichtet */
-  height: 100%; /* Höhe auf 100% setzen, um den gesamten Raum auszufüllen */
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+  height: 100%;
 }
 
 .product-details h1 {
@@ -152,75 +149,75 @@ body {
 }
 
 .sizes {
-  margin: 20px 0; /* Erhöhe den Abstand oben und unten */
-  display: flex; /* Flex-Layout für gleichmäßige Verteilung */
-  justify-content: flex-start; /* Größen linksbündig anordnen */
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .size-box {
   display: inline-block;
-  padding: 10px; /* Padding anpassen, um die Kästchen nicht zu vergrößern */
-  border: 1px solid #ccc; /* Dünne Umrandung */
-  margin: 0 5px; /* Geringer Abstand zwischen den Größenkästchen */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 0 5px;
   cursor: pointer;
-  transition: font-weight 0.3s, background-color 0.3s; /* Übergang für Hover-Effekte */
+  transition: font-weight 0.3s, background-color 0.3s;
 }
 
 .size-box:hover {
-  background-color: lightgray; /* Kästchen grau bei Hover */
+  background-color: lightgray;
 }
+
 .size-box.selected {
-  background-color: lightgray; /* Beispielfarbe für ausgewählte Größe */
-  font-weight: bold; /* Fett für die ausgewählte Größe */
+  background-color: lightgray;
+  font-weight: bold;
 }
 
 button {
-  background-color: white; /* Hintergrundfarbe des Buttons auf Weiß setzen */
-  color: black; /* Textfarbe auf schwarz setzen */
-  padding: 15px 50px; /* Größeres Padding für mehr Größe */
-  border: 1px solid #ccc; /* Dünne schwarze Umrandung */
+  background-color: white;
+  color: black;
+  padding: 15px 50px;
+  border: 1px solid #ccc;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s; /* Übergang für Hover-Effekte */
-  font-size: 20px; /* Schriftgröße des Buttons erhöhen */
-  display: block; /* Block-Element, um es zentrieren zu können */
-  margin: 0; /* Setze Margin auf 0, um es später individuell anzupassen */
-  margin-top: 50px; /* Füge oben 50px Abstand hinzu */
-  font-family: "Josefin Sans", sans-serif; /* Schriftart für den Button */
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 20px;
+  display: block;
+  margin: 0;
+  margin-top: 50px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 button:hover {
-  background-color: #f0f0f0; /* Hintergrundfarbe beim Hover */
-  transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+  background-color: #f0f0f0;
+  transform: scale(1.05);
 }
 
 .product-info {
-  margin-top: 30px; /* Abstand zwischen der Linie und den Produktinformationen vergrößern */
+  margin-top: 30px;
 }
 
 .product-info p {
-  font-size: 18px; /* Produktinformationen größer machen */
-  color: gray; /* Schriftfarbe grau */
-  margin: 5px 0; /* Abstand zwischen den Informationen */
-  text-align: left; /* Produktinfos linksbündig */
+  font-size: 18px;
+  color: gray;
+  margin: 5px 0;
+  text-align: left;
 }
 
 .price {
-  font-size: 30px; /* Preis größer machen */
-  text-align: left; /* Preis linksbündig */
-  margin: 30px 0; /* Abstand um den Preis */
+  font-size: 30px;
+  text-align: left;
+  margin: 30px 0;
 }
 
 .divider {
-  border-top: 1px solid rgb(210, 200, 200); /* Dünne graue Linie */
-  margin: 10px 0; /* Abstand um die Linie */
+  border-top: 1px solid rgb(210, 200, 200);
+  margin: 10px 0;
 }
 
 .product-details h2 {
-  font-size: 40px; /* Größe der Überschrift auf 50px erhöhen */
-  font-family: "Josefin Sans", sans-serif; /* Schriftart für die Überschrift */
+  font-size: 40px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-/* Footer */
 footer {
   background-color: white;
   color: black;
@@ -237,7 +234,7 @@ footer {
 }
 
 .footer-links {
-  flex: 1; /* Links-Container nimmt 1/3 der Breite ein */
+  flex: 1;
 }
 
 .footer-links ul {
@@ -261,39 +258,27 @@ footer {
 }
 
 .footer-logo {
-  text-align: center; /* Zentriert das Logo und den Slogan */
-  flex: 1; /* Logo-Container nimmt 1/3 der Breite ein */
+  text-align: center;
+  flex: 1;
 }
 
 .footer-logo h3 {
   margin: 0;
-  font-size: 20px; /* Schriftgröße des Logos */
+  font-size: 20px;
 }
 
 .footer-logo p {
   margin: 2px 0 0 0;
-  font-size: 14px; /* Schriftgröße des Textes */
+  font-size: 14px;
 }
 
 .social {
   display: flex;
-  justify-content: flex-end; /* Rechtsbündige Ausrichtung */
+  justify-content: flex-end;
   gap: 8px;
-  flex: 1; /* Social-Media-Container nimmt 1/3 der Breite ein */
+  flex: 1;
 }
 
 .social i {
-  font-size: 22px; /* Vergrößerte Icons */
-  color: black;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.social i:hover {
-  color: gray;
-}
-
-.header-divider {
-  border-top: 1px solid rgb(210, 200, 200); /* Dünne graue Linie */
-  margin: 10px 0; /* Abstand um die Linie */
+  font-size: 22px;
 }
