@@ -1,4 +1,3 @@
-/* Grundlegendes Layout */
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -7,13 +6,13 @@ body {
   min-height: 100vh;
 }
 
+/* Navbar */
 .navbar {
   background-color: white;
   font-size: 20px;
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  justify-content: space-between;
 }
 
 .nav-links {
@@ -62,6 +61,7 @@ body {
   font-weight: bold;
 }
 
+/* Produktcontainer */
 .product-container {
   display: flex;
   padding: 20px;
@@ -147,6 +147,7 @@ body {
 .size-box:hover {
   background-color: lightgray;
 }
+
 .size-box.selected {
   background-color: lightgray;
   font-weight: bold;
@@ -202,13 +203,14 @@ button:hover {
 footer {
   background-color: white;
   color: black;
-  padding: 20px;
+  padding: 10px 20px;
   font-size: 14px;
   border-top: 1px solid lightgray;
 }
 
 .footer-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
@@ -275,81 +277,94 @@ footer {
   margin: 10px 0;
 }
 
-/* Media Queries für kleinere Bildschirme */
+/* Responsive Anpassungen mit Media Queries */
 
-/* Mobile und Tablet */
+/* Tablet-Ansicht (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar {
-    font-size: 16px; /* Kleinere Schriftgröße für den Header */
-    padding: 10px;
+    font-size: 16px;
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
   }
 
   .nav-links li {
-    margin: 0 10px; /* Weniger Abstand zwischen den Links */
+    margin: 5px 0;
   }
 
   .logo img {
-    width: 150px; /* Kleinere Logo-Größe */
-    height: auto;
-  }
-
-  .user-cart .login-link {
-    font-size: 14px; /* Kleinere Schriftgröße für Login-Link */
-  }
-
-  button {
-    width: 100%;
-    font-size: 16px; /* Kleinere Schriftgröße für Buttons */
+    max-width: 150px;
   }
 
   footer {
-    font-size: 12px; /* Kleinere Schriftgröße für Footer */
+    font-size: 12px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo h3 {
-    font-size: 16px; /* Kleinere Schriftgröße für Footer-Logo */
+    font-size: 16px;
   }
 
-  .footer-logo p {
-    font-size: 12px; /* Kleinere Schriftgröße für Footer-Text */
+  .footer-links ul {
+    flex-direction: column;
+  }
+
+  .social {
+    margin-top: 10px;
+    justify-content: center;
   }
 
   .social i {
-    font-size: 18px; /* Kleinere Social-Media-Icons */
+    font-size: 18px;
   }
 }
 
-/* Kleinere mobile Geräte */
+/* Mobile Ansicht (max-width: 480px) */
 @media (max-width: 480px) {
   .navbar {
-    font-size: 14px; /* Noch kleinere Schriftgröße für den Header */
+    font-size: 14px;
+    padding: 10px;
   }
 
   .logo img {
-    width: 120px; /* Noch kleinere Logo-Größe */
+    max-width: 120px;
   }
 
-  .user-cart .login-link {
-    font-size: 12px; /* Noch kleinere Schriftgröße für Login-Link */
-  }
-
-  button {
-    font-size: 14px; /* Noch kleinere Schriftgröße für Buttons */
+  .nav-links li {
+    margin: 5px 0;
   }
 
   footer {
-    font-size: 10px; /* Noch kleinere Schriftgröße für Footer */
+    font-size: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo h3 {
-    font-size: 14px; /* Noch kleinere Schriftgröße für Footer-Logo */
+    font-size: 14px;
   }
 
-  .footer-logo p {
-    font-size: 10px; /* Noch kleinere Schriftgröße für Footer-Text */
+  .footer-links ul {
+    flex-direction: column;
+  }
+
+  .social {
+    margin-top: 10px;
+    justify-content: center;
   }
 
   .social i {
-    font-size: 16px; /* Noch kleinere Social-Media-Icons */
+    font-size: 16px;
   }
 }
