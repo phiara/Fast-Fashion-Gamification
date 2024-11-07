@@ -1,3 +1,4 @@
+/* Allgemeine Layout-Einstellungen */
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -6,98 +7,90 @@ body {
   min-height: 100vh;
 }
 
-/* Navbar */
 .navbar {
-  background-color: white;
+  background-color: white; /* Hintergrundfarbe auf Weiß ändern */
   font-size: 20px;
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertikale Ausrichtung */
   padding: 10px 20px;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Links und Rechts trennen */
 }
 
 .nav-links {
   display: flex;
-  justify-content: flex-start;
-  flex-grow: 1;
-  flex-wrap: wrap;
+  justify-content: flex-start; /* Links ausrichten */
+  flex-grow: 1; /* Flex-Grow für den Platz */
 }
 
 .nav-links li {
   list-style: none;
-  margin: 0 20px;
-  display: flex;
-  align-items: center;
+  margin: 0 20px; /* Abstand zwischen den Menüpunkten */
+  display: flex; /* Flex-Display für bessere Ausrichtung */
+  align-items: center; /* Vertikale Ausrichtung */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: normal;
-  line-height: 40px;
+  color: #333; /* Linkfarbe */
+  font-weight: normal; /* Normalgewicht für den Link */
+  line-height: 40px; /* Höhe der Links, um sie vertikal auszurichten */
 }
 
 .nav-links a:hover {
-  font-weight: bold;
+  font-weight: bold; /* Fett bei Hover */
 }
 
 .logo {
   display: flex;
-  justify-content: left;
-  flex-grow: 2;
+  justify-content: left; /* Logo zentrieren */
+  flex-grow: 2; /* Flex-grow für zentrierte Positionierung */
 }
 
 .user-cart {
   display: flex;
   align-items: center;
-  justify-content: center; /* Zentrierte Ausrichtung */
   margin-left: auto;
-  flex-grow: 0; /* Verhindert, dass es den verfügbaren Platz dehnt */
 }
 
 .user-cart .login-link {
-  color: #333;
+  color: #333; /* Anmelden Link in Schwarz */
   margin-right: 20px;
-  text-decoration: none;
+  text-decoration: none; /* Keine Unterstreichung */
 }
 
 .user-cart .login-link:hover {
-  font-weight: bold;
+  font-weight: bold; /* Fett bei Hover */
 }
 
-/* Produktcontainer */
 .product-container {
   display: flex;
-  padding: 20px;
+  padding: 20px; /* Innenabstand beibehalten */
   flex: 1;
-  height: 800px;
-  flex-wrap: wrap;
+  height: 800px; /* Höhe des Produktcontainers erhöhen */
 }
 
 .image-slider {
-  flex: 2;
+  flex: 2; /* 2 Teile für den Bilder-Container */
   position: relative;
-  overflow: hidden;
-  height: 100%;
+  overflow: hidden; /* Versteckt überstehende Teile */
+  height: 100%; /* Slider nimmt volle Höhe des Containers ein */
 }
 
 .slider {
   display: flex;
   position: relative;
-  height: 100%;
+  height: 100%; /* Slider soll die volle Höhe des Containers einnehmen */
 }
 
 .slide {
-  display: none;
+  display: none; /* Standardmäßig ausgeblendet */
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Stellt sicher, dass das Bild im Container bleibt */
+  height: 100%; /* Höhe an den Slider anpassen */
+  object-fit: contain; /* Beibehaltung des Seitenverhältnisses ohne Beschneiden */
 }
 
 .slide.active {
-  display: block;
-  transition: opacity 0.5s ease;
+  display: block; /* Zeigt nur das aktive Bild */
+  transition: opacity 0.5s ease; /* Sanfter Übergang für Bildwechsel */
 }
 
 .arrow {
@@ -105,30 +98,28 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  color: white;
+  color: white; /* Pfeilfarbe */
   cursor: pointer;
-  z-index: 10;
-  background-color: rgba(190, 185, 185, 0.5);
-  padding: 10px;
-  border-radius: 5px;
+  z-index: 10; /* Sicherstellen, dass sie über den Bildern sind */
+  background-color: rgba(190, 185, 185, 0.5); /* Halbdurchsichtiger Hintergrund */
+  padding: 10px; /* Etwas Platz um die Pfeile */
+  border-radius: 5px; /* Abgerundete Ecken für die Pfeile */
 }
 
 .arrow.left {
-  left: 10px;
+  left: 10px; /* Abstand vom linken Rand */
 }
 
 .arrow.right {
-  right: 10px;
+  right: 10px; /* Abstand vom rechten Rand */
 }
 
 .product-details {
-  flex: 1;
-  padding: 30px;
-  text-align: left;
-  height: 100%;
+  flex: 1; /* 1 Teil für den Informations-Container */
+  padding: 30px; /* Padding für die Produktdetails */
+  text-align: left; /* Links ausgerichtet */
+  height: 100%; /* Höhe auf 100% setzen, um den gesamten Raum auszufüllen */
 }
-
-/* Textgrößen für Produktdetails */
 .product-details h1 {
   color: rgb(248, 10, 10);
   font-size: 40px;
@@ -137,73 +128,72 @@ body {
 }
 
 .sizes {
-  margin: 20px 0;
-  display: flex;
-  justify-content: flex-start;
+  margin: 20px 0; /* Erhöhe den Abstand oben und unten */
+  display: flex; /* Flex-Layout für gleichmäßige Verteilung */
+  justify-content: flex-start; /* Größen linksbündig anordnen */
 }
 
 .size-box {
   display: inline-block;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 0 5px;
+  padding: 10px; /* Padding anpassen, um die Kästchen nicht zu vergrößern */
+  border: 1px solid #ccc; /* Dünne Umrandung */
+  margin: 0 5px; /* Geringer Abstand zwischen den Größenkästchen */
   cursor: pointer;
-  transition: font-weight 0.3s, background-color 0.3s;
+  transition: font-weight 0.3s, background-color 0.3s; /* Übergang für Hover-Effekte */
 }
 
 .size-box:hover {
-  background-color: lightgray;
+  background-color: lightgray; /* Kästchen grau bei Hover */
 }
-
 .size-box.selected {
-  background-color: lightgray;
-  font-weight: bold;
+  background-color: lightgray; /* Beispielfarbe für ausgewählte Größe */
+  font-weight: bold; /* Fett für die ausgewählte Größe */
 }
 
 button {
-  background-color: white;
-  color: black;
-  padding: 15px 50px;
-  border: 1px solid #ccc;
+  background-color: white; /* Hintergrundfarbe des Buttons auf Weiß setzen */
+  color: black; /* Textfarbe auf schwarz setzen */
+  padding: 15px 50px; /* Größeres Padding für mehr Größe */
+  border: 1px solid #ccc; /* Dünne schwarze Umrandung */
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  font-size: 20px;
-  display: block;
-  margin: 0;
-  margin-top: 50px;
-  font-family: "Josefin Sans", sans-serif;
+  transition: background-color 0.3s, transform 0.3s; /* Übergang für Hover-Effekte */
+  font-size: 20px; /* Schriftgröße des Buttons erhöhen */
+  display: block; /* Block-Element, um es zentrieren zu können */
+  margin: 0; /* Setze Margin auf 0, um es später individuell anzupassen */
+  margin-top: 50px; /* Füge oben 50px Abstand hinzu */
+  font-family: "Josefin Sans", sans-serif; /* Schriftart für den Button */
 }
 
 button:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.05);
+  background-color: #f0f0f0; /* Hintergrundfarbe beim Hover */
+  transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
 }
 
 .product-info {
-  margin-top: 30px;
+  margin-top: 30px; /* Abstand zwischen der Linie und den Produktinformationen vergrößern */
 }
 
 .product-info p {
-  font-size: 18px;
-  color: gray;
-  margin: 5px 0;
-  text-align: left;
+  font-size: 18px; /* Produktinformationen größer machen */
+  color: gray; /* Schriftfarbe grau */
+  margin: 5px 0; /* Abstand zwischen den Informationen */
+  text-align: left; /* Produktinfos linksbündig */
 }
 
 .price {
-  font-size: 30px;
-  text-align: left;
-  margin: 30px 0;
+  font-size: 30px; /* Preis größer machen */
+  text-align: left; /* Preis linksbündig */
+  margin: 30px 0; /* Abstand um den Preis */
 }
 
 .divider {
-  border-top: 1px solid rgb(210, 200, 200);
-  margin: 10px 0;
+  border-top: 1px solid rgb(210, 200, 200); /* Dünne graue Linie */
+  margin: 10px 0; /* Abstand um die Linie */
 }
 
 .product-details h2 {
-  font-size: 40px;
-  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px; /* Größe der Überschrift auf 50px erhöhen */
+  font-family: "Josefin Sans", sans-serif; /* Schriftart für die Überschrift */
 }
 
 /* Footer */
@@ -223,7 +213,7 @@ footer {
 }
 
 .footer-links {
-  flex: 1;
+  flex: 1; /* Links-Container nimmt 1/3 der Breite ein */
 }
 
 .footer-links ul {
@@ -247,29 +237,29 @@ footer {
 }
 
 .footer-logo {
-  text-align: center;
-  flex: 1;
+  text-align: center; /* Zentriert das Logo und den Slogan */
+  flex: 1; /* Logo-Container nimmt 1/3 der Breite ein */
 }
 
 .footer-logo h3 {
   margin: 0;
-  font-size: 20px;
+  font-size: 20px; /* Schriftgröße des Logos */
 }
 
 .footer-logo p {
   margin: 2px 0 0 0;
-  font-size: 14px;
+  font-size: 14px; /* Schriftgröße des Textes */
 }
 
 .social {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Rechtsbündige Ausrichtung */
   gap: 8px;
-  flex: 1;
+  flex: 1; /* Social-Media-Container nimmt 1/3 der Breite ein */
 }
 
 .social i {
-  font-size: 22px;
+  font-size: 22px; /* Vergrößerte Icons */
   color: black;
   cursor: pointer;
   transition: color 0.3s;
@@ -280,44 +270,49 @@ footer {
 }
 
 .header-divider {
-  border-top: 1px solid rgb(210, 200, 200);
-  margin: 10px 0;
+  border-top: 1px solid rgb(210, 200, 200); /* Dünne graue Linie */
+  margin: 10px 0; /* Abstand um die Linie */
 }
 
-/* Responsive Anpassungen mit Media Queries */
+/* Medienabfragen für kleinere Bildschirmgrößen */
 
-/* Tablet-Ansicht (max-width: 768px) */
+/* Für Geräte mit einer Breite von bis zu 768px */
 @media (max-width: 768px) {
   .navbar {
-    font-size: 16px;
-    flex-direction: column;
-    padding: 10px 15px;
+    flex-direction: column; /* Menü untereinander statt nebeneinander */
+    font-size: 18px;
   }
 
   .nav-links {
     flex-direction: column;
-    margin-top: 10px;
+    align-items: flex-start;
   }
 
-  .nav-links li {
-    margin: 5px 0;
-  }
-
-  .logo img {
-    max-width: 150px;
+  .logo {
+    justify-content: center; /* Logo zentrieren */
   }
 
   .product-container {
-    flex-direction: column;
+    flex-direction: column; /* Produktbild und -details untereinander */
+    height: auto;
   }
 
   .image-slider {
     flex: 1;
-    height: 300px;
+    margin-bottom: 20px;
   }
 
-  footer {
-    font-size: 12px;
+  .product-details {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .product-details h1 {
+    font-size: 30px;
+  }
+
+  .sizes {
+    flex-direction: column; /* Größen untereinander statt nebeneinander */
   }
 
   .footer-container {
@@ -325,71 +320,37 @@ footer {
     align-items: center;
   }
 
-  .footer-logo h3 {
-    font-size: 16px;
-  }
-
   .footer-links ul {
+    display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .social {
-    margin-top: 10px;
     justify-content: center;
-  }
-
-  .social i {
-    font-size: 18px;
   }
 }
 
-/* Mobile Ansicht (max-width: 480px) */
+/* Für Geräte mit einer Breite von bis zu 480px */
 @media (max-width: 480px) {
   .navbar {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 16px; /* Kleinere Schriftgröße */
   }
 
-  .logo img {
-    max-width: 120px;
+  .product-details h1 {
+    font-size: 25px;
   }
 
-  .nav-links li {
-    margin: 5px 0;
+  .product-details h2 {
+    font-size: 30px;
   }
 
-  .product-container {
-    flex-direction: column;
-  }
-
-  .image-slider {
-    flex: 1;
-    height: 250px;
-  }
-
-  footer {
-    font-size: 10px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-logo h3 {
-    font-size: 14px;
-  }
-
-  .footer-links ul {
-    flex-direction: column;
-  }
-
-  .social {
-    margin-top: 10px;
-    justify-content: center;
-  }
-
-  .social i {
+  button {
+    padding: 12px 40px;
     font-size: 16px;
+  }
+
+  .price {
+    font-size: 25px;
   }
 }
