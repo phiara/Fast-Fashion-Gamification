@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopCouture - Gamification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wheel.css"> <!-- CSS für das Glücksrad -->
+</head>
+<body>
+    <header class="navbar">
+        <!-- Menü Icon (für mobile Ansicht) -->
+        <div class="menu-icon">
+            <img src="menu.png" alt="Menü" width="30" />
+        </div>
+        
+        <!-- Navigationslinks -->
+        <ul class="nav-links">
+            <li><a href="#">Damen</a></li>
+            <li><a href="#">Herren</a></li>
+            <li><a href="#">Kinder</a></li>
+        </ul>
+    
+        <!-- Logo -->
+        <div class="logo">
+            <img src="PopCoutureLo.png" alt="PopCouture Logo" width="150" />
+        </div>
+    
+        <!-- Benutzer- und Warenkorbbereich -->
+        <div class="user-cart">
+            <a href="#" class="login-link">Anmelden</a>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart" style="font-size: 30px;"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+    <!-- Untermenü -->
+    <nav class="submenu">
+        <ul>
+            <li> <img src="flamme.png" alt="Flamme" width="15"> <a href="#">Bestseller </a><img src="flamme.png" alt="Flamme" width="15"></li>
+            <li><img src="new.png" alt="New" width="20"> <a href="#"> Neuheiten </a><img src="new.png" alt="New" width="20"></li>
+            <li><img src="diamond.webp" alt="New" width="20"> <a href="#"> Im Trend </a><img src="diamond.webp" alt="New" width="20"></li>
+            <li><img src="feuerwerk.png" alt="Sale" width="20"> <a href="#"> Sale </a><img src="feuerwerk.png" alt="Sale" width="20"></li>
+        </ul>
+    </nav>
+
+    <div class="header-divider"></div> <!-- Linie unter dem Header -->
+
+    <!-- Wrapper für die Skalierung -->
+    <main>
+        <div class="product-container">
+            
+             <div id="werbeBanner">
+                
+                <img src="Werbung.png" alt="Werbebanner" width="auto">
+            </div>
+            <div class="image-slider">
+                <div class="slider">
+                    <span class="arrow left" onclick="plusSlides(-1)">&#10094;</span>
+                    <img class="slide" src="shirt1.jpg" alt="Produktbild 1" />
+                    <img class="slide" src="shirt2.jpg" alt="Produktbild 2" />
+                    <img class="slide" src="shirt3.jpg" alt="Produktbild 3" />
+                    <span class="arrow right" onclick="plusSlides(1)">&#10095;</span>
+                </div>
+            </div>
+
+            <!-- Produktdetails -->
+            <div class="product-details">
+                <h2>Unisex T-Shirt</h2>
+                <div class="divider"></div> <!-- Obere Linie -->
+                <div class="price">12,99 €</div>
+                <div class="sizes">
+                    <div class="size-box">XS</div>
+                    <div class="size-box">S</div>
+                    <div class="size-box">M</div>
+                    <div class="size-box">L</div>
+                    <div class="size-box">XL</div>
+                    <div class="size-box">XXL</div>
+                </div>
+
+                <button id="add-to-cart">In den Warenkorb legen</button>
+                
+                <div class="divider"></div> <!-- Untere Linie, jetzt auch als div -->
+            
+                
+                <div class="product-info">
+                    <p><strong>Zusammensetzung:</strong> Polyamid 92%, Elasthan 8%</p>
+                    <p><strong>Pflegehinweise:</strong> Maschinenwäsche 40°</p>
+                    <p><strong>Herkunft:</strong> Made in Bangladesch</p>
+                    <p><strong>Verpackung: </strong>Plastik</p>
+                    
+                </div>
+                <div id="versand">
+                    <p>&#10004; Versandkostenfrei & kostenlose Retoure</p>
+                    <p>&#x1F4E6; Sofort lieferbar </p>
+                </div>
+                <!-- Neuer Rabatt-Hinweis, zunächst versteckt -->
+                <div id="discount-message">
+                    Juhu, du hast 30% gewonnen! <img src="party.webp" alt="Juhu" width="20">  Der Rabatt wird dir automatisch im Warenkorb abgezogen.
+                </div>
+                
+                <button id="return-to-study" class="study-button">Zurück zur Studie</button>
+            </div>
+        </div>
+
+        <!-- Glücksrad Pop-Up Container (außerhalb des body, aber im HTML) -->
+        <div id="wheel-container"></div> <!-- Container für das Glücksrad Pop-Up -->
+        
+
+    </main>
+
+    <div class="footer-divider"></div> <!-- Linie über dem Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- Link-Liste -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Startseite</a></li>
+                    <li><a href="#">Produkte</a></li>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
+            </div>
+            <!-- Logo und Social-Media-Icons -->
+            <div class="footer-logo">
+                <h3>PopCouture</h3>
+                <p>Aktuelle Trends für jeden Anlass.</p>
+            </div>
+            <div class="social">
+                <i class="fa-brands fa-facebook-square"></i>
+                <i class="fa-brands fa-instagram-square"></i>
+                <i class="fa-brands fa-twitter-square"></i>
+                <i class="fa-brands fa-youtube-square"></i>
+                <i class="fa-brands fa-whatsapp-square"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="wheel.js"></script> <!-- JS für das Glücksrad -->
+</body>
+</html>

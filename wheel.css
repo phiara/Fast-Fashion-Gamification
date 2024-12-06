@@ -1,0 +1,184 @@
+/* Verhindert, dass das Glücksrad skaliert wird */
+#wheel-container > .wheel {
+    transform: none !important; /* Verhindert die Skalierung auf das Glücksrad */
+    pointer-events: auto; /* Stellt sicher, dass das Glücksrad anklickbar ist */
+}
+/* Glücksrad Pop-Up CSS */
+.wheel-popup {
+    display: flex;
+    flex-direction: contents; /* Anordnung in Spalten */
+    justify-content: center; /* Vertikal zentriert */
+    align-items: center; /* Horizontal zentriert */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtiger Hintergrund */
+    z-index: 1000; /* Damit es über anderen Inhalten liegt */
+}
+
+
+/* Container für das Glücksrad */
+#wheel {
+    position: relative; /* Damit der Pfeil relativ zum Rad positioniert werden kann */
+    width: 300px; /* Größe des Rades */
+    height: 300px; /* Größe des Rades */
+    border-radius: 50%; /* Runder Rand für das Rad */
+    overflow: hidden; /* Versteckt alles, was außerhalb des Rades ist */
+    border: 5px solid #ccc; /* Optional: Rand des Rades */
+    margin: 0 auto; /* Zentriert das Rad auf der Seite */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für das Rad */
+}
+
+/* Stopp-Punkt Pfeil */
+.stop-arrow {
+    position: absolute;
+    top: -30px; /* Oberhalb des Rades */
+    left: 50%; /* Horizontal in der Mitte */
+    transform: translateX(-50%); /* Horizontale Zentrierung des Pfeils */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Linke Seite des Pfeils */
+    border-right: 10px solid transparent; /* Rechte Seite des Pfeils */
+    border-bottom: 20px solid red; /* Unterseite des Pfeils in rot */
+}
+
+/* Glücksrad Stücke */
+.slice {
+    position: absolute; /* Absolute Positionierung für die Stücke */
+    width: 50%; /* Breite eines Stücks */
+    height: 50%; /* Höhe eines Stücks */
+    transform-origin: 100% 100%; /* Ursprung für die Drehung */
+    display: flex; /* Flexbox für zentrierte Inhalte */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    font-size: 20px; /* Schriftgröße für die Rabatte */
+    font-weight: bold; /* Fett für bessere Sichtbarkeit */
+    color: black; /* Textfarbe */
+    border: 1px solid #fff; /* Optional: Rand für die Stücke */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: leichter Schatten für Tiefe */
+}
+
+/* Drehen Button */
+#spin-button {
+    display: block; /* Um sicherzustellen, dass der Button als Block angezeigt wird */
+    margin: 20px auto 0; /* Zentriert unter dem Rad */
+    background-color: #28a745; /* Hintergrundfarbe */
+    color: white; /* Schriftfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 10px 20px; /* Innenabstand */
+    cursor: pointer; /* Hand-Cursor anzeige */
+}
+
+/* Schließen Button */
+.close-button {
+    cursor: pointer; /* Hand-Cursor für das Schließen */
+    color: #333; /* Farbe des Schließensymbols */
+    font-size: 24px; /* Schriftgröße */
+    position: absolute; /* Positionierung */
+    top: 10px; /* Abstand von oben */
+    right: 10px; /* Abstand von rechts */
+}
+
+.result-popup {
+    position: fixed; /* Position des Ergebnis-Popups */
+    top: 50%; /* Vertikal zentriert */
+    left: 50%; /* Horizontal zentriert */
+    transform: translate(-50%, -50%); /* Verschiebung zur exakten Mitte */
+    background-color: rgba(255, 255, 255, 0.9); /* Halbdurchsichtige Hintergrundfarbe */
+    padding: 20px; /* Innenabstand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 px 20px rgba(0, 0, 0, 0.2); /* Schatten */
+    z-index: 2000; /* Über dem Rad */
+}
+/* Glücksrad Popup */
+.wheel-popup {
+    display: flex;
+    flex-direction: column; /* Anordnung in Spalten */
+    justify-content: center; /* Vertikal zentriert */
+    align-items: center; /* Horizontal zentriert */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtiger Hintergrund */
+    z-index: 1000; /* Damit es über anderen Inhalten liegt */
+}
+
+/* Container für das Glücksrad */
+#wheel {
+    position: relative; /* Damit der Pfeil relativ zum Rad positioniert werden kann */
+    width: 300px; /* Größe des Rades */
+    height: 300px; /* Größe des Rades */
+    border-radius: 50%; /* Runder Rand für das Rad */
+    overflow: hidden; /* Versteckt alles, was außerhalb des Rades ist */
+    border: 5px solid #ccc; /* Optional: Rand des Rades */
+    margin: 0 auto; /* Zentriert das Rad auf der Seite */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für das Rad */
+}
+
+/* Stopp-Punkt Pfeil */
+.stop-arrow {
+    position: absolute;
+    top: -30px; /* Oberhalb des Rades */
+    left: 50%; /* Horizontal in der Mitte */
+    transform: translateX(-50%); /* Horizontale Zentrierung des Pfeils */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Linke Seite des Pfeils */
+    border-right: 10px solid transparent; /* Rechte Seite des Pfeils */
+    border-bottom: 20px solid red; /* Unterseite des Pfeils in rot */
+}
+
+/* Glücksrad Stücke */
+.slice {
+    position: absolute; /* Absolute Positionierung für die Stücke */
+    width: 50%; /* Breite eines Stücks */
+    height: 50%; /* Höhe eines Stücks */
+    transform-origin: 100% 100%; /* Ursprung für die Drehung */
+    display: flex; /* Flexbox für zentrierte Inhalte */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    font-size: 20px; /* Schriftgröße für die Rabatte */
+    font-weight: bold; /* Fett für bessere Sichtbarkeit */
+    color: black; /* Textfarbe */
+    border: 1px solid #fff; /* Optional: Rand für die Stücke */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: leichter Schatten für Tiefe */
+}
+
+/* Drehen Button */
+#spin-button {
+    display: block; /* Um sicherzustellen, dass der Button als Block angezeigt wird */
+    margin: 20px auto 0; /* Zentriert unter dem Rad */
+    background-color: #28a745; /* Hintergrundfarbe */
+    color: white; /* Schriftfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 10px 20px; /* Innenabstand */
+    cursor: pointer; /* Hand-Cursor anzeige */
+}
+
+/* Schließen Button */
+.close-button {
+    cursor: pointer; /* Hand-Cursor für das Schließen */
+    color: #333; /* Farbe des Schließensymbols */
+    font-size: 24px; /* Schriftgröße */
+    position: absolute; /* Positionierung */
+    top: 10px; /* Abstand von oben */
+    right: 10px; /* Abstand von rechts */
+}
+
+.result-popup {
+    position: fixed; /* Position des Ergebnis-Popups */
+    top: 50%; /* Vertikal zentriert */
+    left: 50%; /* Horizontal zentriert */
+    transform: translate(-50%, -50%); /* Verschiebung zur exakten Mitte */
+    background-color: rgba(255, 255, 255, 0.9); /* Halbdurchsichtige Hintergrundfarbe */
+    padding: 20px; /* Innenabstand */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 px 20px rgba(0, 0, 0, 0.2); /* Schatten */
+    z-index: 2000; /* Über dem Rad */
+}

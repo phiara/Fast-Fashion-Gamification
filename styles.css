@@ -1,0 +1,389 @@
+/* Allgemeine Einstellungen */
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(to right, #aedae1, #cae1c0);
+  font-size: 20px;
+  display: flex;
+  align-items: center; /* Vertikale Ausrichtung */
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start; /* Links ausrichten */
+  flex-grow: 1; /* Flex-Grow für den Platz */
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 20px; /* Abstand zwischen den Menüpunkten */
+  display: flex; /* Flex-Display für bessere Ausrichtung */
+  align-items: center; /* Vertikale Ausrichtung */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Linkfarbe */
+  font-weight: normal; /* Normalgewicht für den Link */
+  line-height: 40px; /* Höhe der Links, um sie vertikal auszurichten */
+}
+
+.nav-links a:hover {
+  font-weight: bold; /* Fett bei Hover */
+}
+
+.logo {
+  display: flex;
+  justify-content: left; /* Logo bleibt links ausgerichtet */
+  flex-grow: 2; /* Flex-grow für zentrierte Positionierung */
+  width: auto; /* Breite des Logos */
+  height: auto; /* Höhe automatisch anpassen, um das Seitenverhältnis beizubehalten */
+}
+
+.user-cart {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.user-cart .login-link {
+  color: #333; /* Anmelden Link in Schwarz */
+  margin-right: 20px;
+  text-decoration: none; /* Keine Unterstreichung */
+}
+
+.user-cart .login-link:hover {
+  font-weight: bold; /* Fett bei Hover */
+}
+
+.product-container {
+  display: flex;
+  padding: 20px;
+  flex: 1;
+  height: 800px;
+  align-items: flex-start; /* Damit die Elemente oben ausgerichtet sind */
+}
+/* Werbebanner-Stil */
+#werbeBanner {
+  width: 250px; /* Festgelegte Breite */
+  background-color: #f0f0f0; /* Hintergrundfarbe für Sichtbarkeit, kann angepasst werden */
+  padding: 10px;
+  margin-right: 20px; /* Abstand zum nächsten Element */
+  box-sizing: border-box; /* Berücksichtigt Padding in der Breite */
+}
+#werbeBanner {
+  background-color: white; /* Weißer Hintergrund */
+  text-align: center;      /* Zentriert den Inhalt */
+  padding: 10px;           /* Optional: Abstand innerhalb der Box */
+  box-sizing: border-box;  /* Berücksichtigt Padding in der Breite */
+}
+#werbeBanner img {
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+.image-slider {
+  flex: 2; /* Passt die Flex-Eigenschaft an */
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+
+.slider {
+  display: flex;
+  position: relative;
+  height: 100%; /* Slider soll die volle Höhe des Containers einnehmen */
+}
+
+.slide {
+  display: none; /* Standardmäßig ausgeblendet */
+  width: 100%;
+  height: 100%; /* Höhe an den Slider anpassen */
+  object-fit: contain; /* Beibehaltung des Seitenverhältnisses ohne Beschneiden */
+}
+
+.slide.active {
+  display: block; /* Zeigt nur das aktive Bild */
+  transition: opacity 0.5s ease; /* Sanfter Übergang für Bildwechsel */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white; /* Pfeilfarbe */
+  cursor: pointer;
+  z-index: 10; /* Sicherstellen, dass sie über den Bildern sind */
+  background-color: rgba(190, 185, 185, 0.5); /* Halbdurchsichtiger Hintergrund */
+  padding: 10px; /* Etwas Platz um die Pfeile */
+  border-radius: 5px; /* Abgerundete Ecken für die Pfeile */
+}
+
+.arrow.left {
+  left: 10px; /* Abstand vom linken Rand */
+}
+
+.arrow.right {
+  right: 10px; /* Abstand vom rechten Rand */
+}
+
+.product-details {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+  height: 100%;
+}
+
+
+.product-details h1 {
+  color: rgb(205, 0, 0);
+  font-size: 40px;
+  text-align: left;
+  font-style: italic;
+}
+
+.sizes {
+  margin: 20px 0; /* Erhöhe den Abstand oben und unten */
+  display: flex; /* Flex-Layout für gleichmäßige Verteilung */
+  justify-content: flex-start; /* Größen linksbündig anordnen */
+}
+
+.size-box {
+  display: inline-block;
+  padding: 10px; /* Padding anpassen, um die Kästchen nicht zu vergrößern */
+  border: 1px solid #ccc; /* Dünne Umrandung */
+  margin: 0 5px; /* Geringer Abstand zwischen den Größenkästchen */
+  cursor: pointer;
+  transition: font-weight 0.3s, background-color 0.3s; /* Übergang für Hover-Effekte */
+}
+
+.size-box:hover {
+  background-color: lightgray; /* Kästchen grau bei Hover */
+}
+
+.size-box.selected {
+  background-color: lightgray; /* Beispielfarbe für ausgewählte Größe */
+  font-weight: bold; /* Fett für die ausgewählte Größe */
+}
+
+button {
+  background-color: white; /* Hintergrundfarbe des Buttons auf Weiß setzen */
+  color: black; /* Textfarbe auf schwarz setzen */
+  padding: 15px 50px; /* Größeres Padding für mehr Größe */
+  border: 1px solid #ccc; /* Dünne schwarze Umrandung */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Übergang für Hover-Effekte */
+  font-size: 20px; /* Schriftgröße des Buttons erhöhen */
+  display: block; /* Block-Element, um es zentrieren zu können */
+  margin: 0; /* Setze Margin auf 0, um es später individuell anzupassen */
+  margin-top: 50px; /* Füge oben 50px Abstand hinzu */
+  margin-bottom: 30px;
+  font-family: "Josefin Sans", sans-serif; /* Schriftart für den Button */
+}
+
+button:hover {
+  background-color: #f0f0f0; /* Hintergrundfarbe beim Hover */
+  transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+}
+
+.product-info {
+  margin-top: 30px; /* Abstand zwischen der Linie und den Produktinformationen vergrößern */
+}
+
+.product-info p {
+  font-size: 18px; /* Produktinformationen größer machen */
+  color: gray; /* Schriftfarbe grau */
+  margin: 5px 0; /* Abstand zwischen den Informationen */
+  text-align: left; /* Produktinfos linksbündig */
+}
+
+.price {
+  font-size: 30px; /* Preis größer machen */
+  text-align: left; /* Preis linksbündig */
+  margin: 30px 0; /* Abstand um den Preis */
+}
+
+.divider {
+  border-top: 2px solid #cae1c0; /*rgb(210, 200, 200); /* Dünne graue Linie */
+  margin-top: 10px; /* Abstand nur oben */
+  margin-bottom: 20px;
+}
+
+
+.product-details h2 {
+  font-size: 40px; /* Größe der Überschrift auf 50px erhöhen */
+  font-family: "Josefin Sans", sans-serif; /* Schriftart für die Überschrift */
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-top: 1px solid lightgray;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-links {
+  flex: 1; /* Links-Container nimmt 1/3 der Breite ein */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-links li {
+  margin: 0 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links a:hover {
+  color: gray;
+}
+
+.footer-logo {
+  text-align: center; /* Zentriert das Logo und den Slogan */
+  flex: 1; /* Logo-Container nimmt 1/3 der Breite ein */
+}
+
+.footer-logo h3 {
+  margin: 0;
+  font-size: 20px; /* Schriftgröße des Logos */
+}
+
+.footer-logo p {
+  margin: 2px 0 0 0;
+  font-size: 14px; /* Schriftgröße des Textes */
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end; /* Rechtsbündige Ausrichtung */
+  gap: 8px;
+  flex: 1; /* Social-Media-Container nimmt 1/3 der Breite ein */
+}
+
+.social i {
+  font-size: 22px; /* Vergrößerte Icons */
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social i:hover {
+  color: gray;
+}
+
+.header-divider {
+  border-top: 2px solid #cae1c0; /*rgb(210, 200, 200); /* Dünne graue Linie */
+}
+
+/* Untermenü Styles */
+.submenu {
+  background-color: rgb(255, 255, 255); /* Beibehaltung der Hintergrundfarbe */
+  border-top: 2px solid #cae1c0;
+}
+
+
+.submenu ul {
+  display: flex;
+  justify-content: flex-start; /* Ändere von 'center' zu 'flex-start' */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 90px;
+}
+
+
+.submenu li {
+  margin: 0 20px; /* Abstand zwischen den Menüpunkten */
+}
+
+.submenu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  line-height: 50px; /* Höhe des Untermenüs */
+}
+
+.submenu a:hover {
+  font-weight: bold; /* Fett bei Hover */
+}
+.submenu li img {
+  vertical-align: middle;    /* Zentriert die Bilder vertikal mit dem Text */
+  margin: 0 5px;             /* Fügt einen kleinen Abstand zwischen Bildern und Text hinzu */
+  margin-bottom: 5px;
+}
+/* Rabatt-Hinweis */
+#discount-message {
+  display: none; /* Versteckt das Div standardmäßig */
+  background: linear-gradient(to right, #aedae1, #cae1c0);
+  color: black; /* Textfarbe */
+  padding: 15px; /* Innenabstand */
+  margin-top: 20px; /* Abstand nach oben */
+  font-size: 18px; /* Schriftgröße */
+  text-align: center; /* Zentrierter Text */
+  border: 1px solid #fff5f5; /* Dünner Rahmen */
+  border-radius: 5px; /* Abgerundete Ecken */
+}
+#discount-message img {
+  vertical-align: middle; /* Zentriert das Bild vertikal mit dem Text */
+  margin-left: 2px; /* Optional: Abstand links */
+  margin-right: 2px; /* Optional: Abstand rechts */
+  margin-bottom: 5px;
+}
+.study-button {
+  display: block;
+  width: 100%; /* Button über gesamte Breite */
+  margin: 30px 0 0; /* Abstand oben */
+  padding: 10px;
+  background-color: #ffffff; /* Blaue Hintergrundfarbe */
+  color: rgb(5, 5, 5); /* Weiße Schriftfarbe */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer; /* Mauszeiger ändern */
+  text-align: center;
+}
+
+.study-button:hover {
+  background-color: lightgrey; /* Dunkleres Blau bei Hover */
+}
+#versand {
+  font-size: 16px; /* Kleinere Schriftgröße */
+  line-height: 1.4; /* Angenehmer Zeilenabstand */
+  color: #333; /* Dezentes Schwarz für die Schriftfarbe */
+  margin-top: 30px;
+}
+
+#versand p {
+  margin: 5px 0; /* Abstand zwischen den Absätzen */
+}
+
+body {
+  zoom: 0.8; /* Skaliert den gesamten Body auf 80% */
+}
